@@ -1,2 +1,3 @@
 add_subdirectory(narayana)
 add_subdirectory(johnson_trotter)
+add_subdirectory(rand_permutation)
