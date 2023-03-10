@@ -1,0 +1,2 @@
+add_subdirectory(narayana)
+add_subdirectory(johnson_trotter)

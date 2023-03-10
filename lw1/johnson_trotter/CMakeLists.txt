@@ -10,4 +10,4 @@ if(NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif()
 
-add_executable(narayana main.cpp)
+add_executable(johnson_trotter main.cpp)
