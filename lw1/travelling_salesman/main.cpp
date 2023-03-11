@@ -84,8 +84,17 @@ TravSalesManSolution getMinDistance(const vector<vector<size_t>>& matrix)
 
 void printMatrix(const vector<vector<size_t>>& matrix)
 {
+    cout << " \t\t";
+    for(int i = 0; i < matrix.size(); i++)
+    {
+        cout.width(3);
+        cout << i + 1 << " ";
+    }
+    cout << "\n\n";
     for(int row = 0; row < matrix.size(); row ++)
     {
+        cout.width(3);
+        cout << row + 1 << "\t\t";
         for(int col = 0; col < matrix.at(row).size(); col++)
         {
             cout.width(3);
@@ -103,10 +112,10 @@ int main()
     vector<vector<size_t>> squareMatrix = initSquareMatrixWithRandomValues(n, MAX_DISTANCE);
 
     boost::timer t;
-    t.restart();
 
     TravSalesManSolution solution = getMinDistance(squareMatrix);
     double duration = t.elapsed();
+
 
     cout << "Matrix: \n\n";
     printMatrix(squareMatrix);
@@ -118,7 +127,7 @@ int main()
 
     cout << "Min distance = " << solution.minDistance << "\n";
 
-    cout << "\nN = " << n << " duration = " << duration << " s\n";
+    cout << "\nN = " << n << " duration = " << duration * 1000 << " ms\n";
 
     vector<size_t> sizes = {15, 20, 50, 100};
     size_t currSize = n;
