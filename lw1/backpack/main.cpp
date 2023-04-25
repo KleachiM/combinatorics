@@ -12,18 +12,18 @@ struct Subject
     int price;
 };
 
-
-int GetPriceOfCurrentSet(vector<int> &currentSet, vector<Subject> &subjects, int maxWeight) {
+int GetPriceOfCurrentSet(vector<int> &currentSet, vector<Subject> &subjects, int maxWeight)
+{
     int currWeight = 0;
     int priceOfCurrSet = 0;
     for (const auto item: currentSet)
     {
-        currWeight += subjects[item].weight;
+        currWeight += subjects[item - 1].weight;
         if (currWeight > maxWeight)
         {
             return 0;
         }
-        priceOfCurrSet += subjects[item].price;
+        priceOfCurrSet += subjects[item - 1].price;
     }
     return priceOfCurrSet;
 }
@@ -37,7 +37,8 @@ vector<int> GetTakenSubjects(vector<int> &currentSet, int subjectsSize) {
     return takenSubjects;
 }
 
-int GetSettedWeight(const vector<Subject> &subjects, const vector<int> &takenSubjects) {
+int GetSettedWeight(const vector<Subject> &subjects, const vector<int> &takenSubjects)
+{
     int settedWeight = 0;
     for (auto const item: takenSubjects)
     {

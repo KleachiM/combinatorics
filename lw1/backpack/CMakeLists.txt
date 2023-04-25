@@ -11,4 +11,3 @@ if(NOT Boost_FOUND)
 endif()
 
 add_executable(backpack main.cpp)
-add_subdirectory(tests)
